@@ -5,7 +5,7 @@ include('includes/dbconnection.php');
 ?>
 <style>
     .form-inline .custom-select, .form-inline .input-group {
-    width: 200px;
+    width: 250px;
     height: 30px;
     padding-left: 10px;
     padding-right: 15px;
@@ -17,6 +17,8 @@ include('includes/dbconnection.php');
     font-size:13px;
     padding: 0;
     padding-left:8px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
    
 }.input-group > .input-group-append > .btn, .input-group > .input-group-append > .input-group-text, .input-group > .input-group-prepend:first-child > .btn:not(:first-child), .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child), .input-group > .input-group-prepend:not(:first-child) > .btn, .input-group > .input-group-prepend:not(:first-child) > .input-group-text {
     border-top-left-radius: 0;
@@ -28,16 +30,21 @@ include('includes/dbconnection.php');
      color:#ffc107;
      background-color: #fff;
      border:#ffc107;
-     border-radius:20px;
+     border-radius:40%;
 }
 .navbar .navbar-nav .nav-item:hover:not(.btn-appointment)::after, .navbar .navbar-nav .nav-item:hover:not(.btn-appointment)::before, .navbar .navbar-nav .nav-item.active:not(.btn-appointment)::after, .navbar .navbar-nav .nav-item.active:not(.btn-appointment)::before {
     /* opacity: 1; */
     visibility: hidden;
 }
-.btn-outline-primary {
+
+.navbar .navbar-nav .nav-link {
+    padding: 9px 4px;
+}
+    .btn-outline-primary {
     color:#ffc107;
      background-color: #fff;
      border:1px solid #ffc107;
+     border-radius:60%;
 }
 .btn-outline-primary:hover{
     color:#fff;
@@ -63,7 +70,7 @@ include('includes/dbconnection.php');
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="row justify-content-center">
-            <form class="form-inline text-center" action="search.php" method="post">
+            <!-- <form class="form-inline text-center" action="search.php" method="post">
                 <div class="input-group">
                     <input class="form-control" type="text" placeholder="Search for services" name="search">
                     <div class="input-group-append">
@@ -72,7 +79,7 @@ include('includes/dbconnection.php');
                         </button>
                     </div>
                 </div>
-            </form>
+            </form> -->
 </div>
 
             <div class="collapse navbar-collapse" id="main-nav">
@@ -95,11 +102,23 @@ include('includes/dbconnection.php');
                     <li class="nav-item">
                         <a class="nav-link" href="accepted_appoint.php">Accepted List</a>
                     </li>
+                    
                     <li class="nav-item btn-appointment">
                         <a class="nav-link" href="#" data-toggle="modal" data-target="#appointment">Salon Appointment</a>
                     </li>
+                    
                 </ul>
             </div>
+            <form class="form-inline text-center" action="search.php" method="post">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for services" name="search">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-primary" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
     </nav>
 <!--    banner-->
